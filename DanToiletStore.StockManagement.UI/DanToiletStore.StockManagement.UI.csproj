@@ -105,9 +105,9 @@
       <Project>{a0532459-9404-40da-a9cb-4e3cc9400608}</Project>
       <Name>DanToiletStore.StockManagement.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DanToiletStore.StockManagment.Model\DanToiletStore.StockManagment.Model.csproj">
+    <ProjectReference Include="..\DanToiletStore.StockManagement.Model\DanToiletStore.StockManagement.Model.csproj">
       <Project>{0717287e-cd67-4092-b0c2-c30fe5acb9ad}</Project>
-      <Name>DanToiletStore.StockManagment.Model</Name>
+      <Name>DanToiletStore.StockManagement.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
