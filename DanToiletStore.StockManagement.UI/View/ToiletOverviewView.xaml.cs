@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,27 +22,10 @@ namespace DanToiletStore.StockManagement.UI.View
     /// </summary>
     public partial class ToiletOverviewView : Window
     {
-        private Toilet toilet;
-        private List<Toilet> toilets;
-
         public ToiletOverviewView()
         {
             InitializeComponent();
-
-            LoadData();
         }
 
-        private void LoadData()
-        {
-            var toiletDetailView = new ToiletDetailView();
-            toilets = ToiletDataService.GetAllToilets();
-            ToiletListView.ItemsSource = toilets;
-
-        }
-
-        private void ToiletListView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -53,7 +53,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\ImageConverter.cs" />
+    <Compile Include="Converter\PriceConverter.cs" />
     <Compile Include="Service\ToiletDataService.cs" />
+    <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="ViewModel\ToiletDetailViewModel.cs" />
+    <Compile Include="ViewModel\ToiletOverviewViewModel.cs" />
     <Compile Include="View\ToiletDetailView.xaml.cs">
       <DependentUpon>ToiletDetailView.xaml</DependentUpon>
     </Compile>
@@ -109,6 +114,9 @@
       <Project>{0717287e-cd67-4092-b0c2-c30fe5acb9ad}</Project>
       <Name>DanToiletStore.StockManagement.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,24 +10,56 @@ using DanToiletStore.StockManagment.Model.Annotations;
 namespace DanToiletStore.StockManagment.Model
 {
    public class Toilet: INotifyPropertyChanged
-    {
+   {
+       private int _toiletId;
+       private string _toieltName;
+       private int _price;
 
-        public int ToiletId { get; set; }
-        public string ToiletName { get; set; }
-        public int Price { get; set; }
+       public int ToiletId
+       {
+           get { return _toiletId; }
+           set
+           {
+               _toiletId = value;
+               RaisePropertyChanged("ToiletID");
+           }
+       }
+
+       public string ToiletName
+       {
+           get { return _toieltName; }
+           set
+           {
+               _toieltName = value;
+               RaisePropertyChanged("ToiletName");
+           }
+       }
+
+       public int Price
+       {
+           get { return _price; }
+           set
+           {
+               _price = value;
+               RaisePropertyChanged("Price");
+           }
+       }
+
         public string Descripiton { get; set; }
         //  public TYPE Country { get; set; }
         public bool InStock { get; set; }
         public int AmountInStock { get; set; }
         public DateTime FirstAddedToStockDate { get; set; }
         public int ImageId { get; set; }
-       public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-       [NotifyPropertyChangedInvocator]
-       protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+       public void RaisePropertyChanged(string propertyName)
        {
-           var handler = PropertyChanged;
-           if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+           if (PropertyChanged != null)
+           {
+               PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+           }
+               
        }
     }
 }

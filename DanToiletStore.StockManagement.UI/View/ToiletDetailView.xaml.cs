@@ -20,23 +20,21 @@ namespace DanToiletStore.StockManagement.UI.View
     /// </summary>
     public partial class ToiletDetailView : Window
     {
-        public Toilet SelectedToilet { get; set; }
 
         public ToiletDetailView()
         {
             InitializeComponent();
-            this.Loaded += ToiletDetailView_Loaded;
         }
 
-        private void ToiletDetailView_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.DataContext = SelectedToilet;
-        }
+        //private void ToiletDetailView_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    this.DataContext = SelectedToilet;
+        //}
 
-        private void SaveToiletButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            
-
-        }
+        //private void SaveToiletButton_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    SelectedToilet.ToiletName = "The King Toilet";
+        //    SelectedToilet.Price = 1000;
+        //}
     }
 }

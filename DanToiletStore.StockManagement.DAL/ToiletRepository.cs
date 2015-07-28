@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace DanToiletStore.StockManagement.DAL
 {
     public class ToiletRepository : IToiletRepository
     {
-        private static List<Toilet> Toilets;
+        private static ObservableCollection<Toilet> Toilets;
 
         public ToiletRepository()
         {
@@ -23,7 +24,7 @@ namespace DanToiletStore.StockManagement.DAL
            return Toilets.FirstOrDefault();
         }
 
-        public List<Toilet> GetToilets()
+        public ObservableCollection<Toilet> GetToilets()
         {
             if (Toilets == null)
                 LoadToilets();
@@ -50,7 +51,7 @@ namespace DanToiletStore.StockManagement.DAL
 
         private void LoadToilets()
         {
-            Toilets = new List<Toilet>()
+            Toilets = new ObservableCollection<Toilet>()
             {
                 new Toilet()
                 {

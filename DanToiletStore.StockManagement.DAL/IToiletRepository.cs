@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace DanToiletStore.StockManagement.DAL
     {
         Toilet GetAToilet();
 
-        List<Toilet> GetToilets();
+        ObservableCollection<Toilet> GetToilets();
 
         Toilet GetToiletById(int id);
 

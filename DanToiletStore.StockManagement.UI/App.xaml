@@ -1,8 +1,14 @@
 ﻿<Application x:Class="DanToiletStore.StockManagement.UI.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converter="clr-namespace:DanToiletStore.StockManagement.UI.Converter"
+             xmlns:local="clr-namespace:DanToiletStore.StockManagement.UI"
+             xmlns:vm="clr-namespace:DanToiletStore.StockManagement.UI.ViewModel"
              StartupUri="View/ToiletOverviewView.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <converter:PriceConverter x:Key="LocalPriceConverter" />
+            <converter:ImageConverter x:Key="LocalImageConverter"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
