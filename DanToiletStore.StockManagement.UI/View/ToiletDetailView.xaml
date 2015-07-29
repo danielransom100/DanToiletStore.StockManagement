@@ -2,8 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Dan's Toilet Store"
-        Height="600" 
+        xmlns:viewmodel="clr-namespace:DanToiletStore.StockManagement.UI.ViewModel"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        Height="646.269" 
         Width="800">
+    <Window.DataContext>
+        <viewmodel:ToiletDetailViewModel />
+    </Window.DataContext>
     <ScrollViewer>
         <Grid Margin="5">
             <Grid.ColumnDefinitions>
@@ -30,15 +35,28 @@
             <Label Grid.Row="5" Grid.Column="0" Content="Stock amount" FontWeight="Bold"></Label>
             <Label Grid.Row="6" Grid.Column="0" Content="First time added" FontWeight="Bold"></Label>
 
-            <TextBox Grid.Row="2" Grid.Column="1" Name="ToiletIdTextBox" Text="{Binding SelectedToilet.ToiletID, Mode=OneWay}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Name="ToiletDescriptionTextBox" AcceptsReturn="True" Text="{Binding SelectedToilet.Description}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="ToiletIdTextBox" Text="{Binding SelectedToilet.ToiletId, Mode=OneWay}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="ToiletDescriptionTextBox" AcceptsReturn="True" Text="{Binding SelectedToilet.Descripiton}"></TextBox>
             <TextBox Grid.Row="4" Grid.Column="1" Name="ToiletPriceTextBox" Text="{Binding SelectedToilet.Price}"></TextBox>
             <TextBox Grid.Row="5" Grid.Column="1" Name="StockAmountTextBox" Text="{Binding SelectedToilet.AmountInStock}"></TextBox>
             <TextBox Grid.Row="6" Grid.Column="1" Name="FirstTimeAddedTextBox" Text="{Binding SelectedToilet.FirstAddedToStockDate, StringFormat='dd-MM-yyyy'}" ></TextBox>
             <TextBox Grid.Row="7" Grid.Column="1" Name="ExtraDescriptionTextBox"></TextBox>
-            <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Column="0">
-                <Button Name="SaveToiletButton" Margin="5" Width="128"></Button>
+            <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.ColumnSpan="1" Grid.Column="0">
+                <Button Width="89" Content="Save">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding SaveCommand}"></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
             </StackPanel>
+            <Button Content="Delete Toilet" Grid.ColumnSpan="2" Margin="128,0,549,0" Grid.Row="9">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding DeleteCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
         </Grid>
     </ScrollViewer>
 </Window>

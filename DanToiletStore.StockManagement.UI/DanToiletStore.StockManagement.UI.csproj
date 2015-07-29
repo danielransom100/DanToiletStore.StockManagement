@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,7 +56,11 @@
     </ApplicationDefinition>
     <Compile Include="Converter\ImageConverter.cs" />
     <Compile Include="Converter\PriceConverter.cs" />
+    <Compile Include="Messages\UpdateListMessage.cs" />
+    <Compile Include="Service\DialogService.cs" />
     <Compile Include="Service\ToiletDataService.cs" />
+    <Compile Include="Utility\CustomCommand.cs" />
+    <Compile Include="Utility\Messenger.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="ViewModel\ToiletDetailViewModel.cs" />
     <Compile Include="ViewModel\ToiletOverviewViewModel.cs" />

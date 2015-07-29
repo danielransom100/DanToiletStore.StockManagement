@@ -54,6 +54,9 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Image Name="ToiletImage" Grid.Row="0" Grid.ColumnSpan="2" MaxHeight="150"></Image>
+            <StackPanel Grid.Row="7" Grid.RowSpan="2">
+                <Button Height="29" Content="Edit Toilet" Command="{Binding EditCommand}"></Button>
+            </StackPanel>
         </Grid>
 
     </Grid>
