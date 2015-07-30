@@ -12,9 +12,13 @@ namespace DanToiletStore.StockManagement.UI.Service
     {
         Window _toiletDetailView = null;
 
-        public void ShowDialog()
+        public void InitShowDialog()
         {
             _toiletDetailView = new ToiletDetailView();
+        }
+        
+        public void ShowDialog()
+        {
             _toiletDetailView.ShowDialog();
         }
 

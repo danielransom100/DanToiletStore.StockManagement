@@ -56,7 +56,7 @@ namespace DanToiletStore.StockManagement.UI.ViewModel
 
         private void OnToiletReceived(Toilet toilet)
         {
-            _selectedToilet = toilet;
+            SelectedToilet = toilet;
         }
 
         private void SaveToilet(object obj)

@@ -77,6 +77,7 @@ namespace DanToiletStore.StockManagement.UI.ViewModel
 
         private void EditToilet(object obj)
         {
+            _dialogService.InitShowDialog();
             Messenger.Default.Send<Toilet>(_selectedToilet);
             _dialogService.ShowDialog();
         }
